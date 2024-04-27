@@ -7,6 +7,7 @@ const mailSender = require('../utils/mailSender');
 const otpTemplate = require('../mail/templates/emailVerificationTemplate');
 const optGenerator = require('otp-generator');
 const jwt = require('jsonwebtoken')
+const { passwordUpdated } = require("../mail/templates/passwordUpdate");
 
 
 
@@ -287,6 +288,27 @@ exports.changePassword = async (req, res) => {
         //     { new: true });
         userDetails.password = hashedPassword
         await userDetails.save()
+
+        // send email
+        try {
+            const emailResponse = await mailSender(
+                userDetails.email,
+                'Password for your account has been updated',
+                passwordUpdated(
+                    userDetails.email,
+                    `${userDetails.firstName} ${userDetails.lastName}`
+                )
+            );
+            // console.log("Email sent successfully:", emailResponse);
+        }
+        catch (error) {
+            console.error("Error occurred while sending email:", error);
+            return res.status(500).json({
+                success: false,
+                message: "Error occurred while sending email",
+                error: error.message,
+            });
+        }
 
         // return success response
         res.status(200).json({
