@@ -1,8 +1,9 @@
 const express = require('express')
 const app = express()
 
-// connection to DB 
+// connection to DB and cloudinary
 const { connectDB } = require('./config/database');
+const { cloudinaryConnect } = require('./config/cloudinary');
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
@@ -12,7 +13,7 @@ app.listen(PORT, () => {
 
 // connections
 connectDB();
-
+cloudinaryConnect();
 
 
 
