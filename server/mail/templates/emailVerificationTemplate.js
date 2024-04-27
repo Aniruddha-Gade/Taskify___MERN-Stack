@@ -42,18 +42,6 @@ const otpTemplate = (otp, name) => {
 			margin-bottom: 20px;
 		  }
 	
-		  .cta {
-			display: inline-block;
-			padding: 10px 20px;
-			background-color: #ffd60a;
-			color: #000000;
-			text-decoration: none;
-			border-radius: 5px;
-			font-size: 16px;
-			font-weight: bold;
-			margin-top: 20px;
-		  }
-	
 		  .support {
 			font-size: 14px;
 			color: #999999;
@@ -75,8 +63,8 @@ const otpTemplate = (otp, name) => {
 			  src="https://res.cloudinary.com/dfykppt3d/image/upload/v1714201599/taskify-logo_dp8q1e.png"
 			  alt="Taskify Logo"
 		  /></a>
-		  <div class="message">OTP Verification Email</div>
-		  <div class="body">
+		  <div class="message" style="color: #ffffff">OTP Verification Email</div>
+		  <div class="body" style="color: #ffffff">
 			<p>Dear ${name}</p>
 			<p>
 			  Thank you for registering with Taskify. To complete your registration,
@@ -102,7 +90,6 @@ const otpTemplate = (otp, name) => {
 		  </div>
 		</div>
 	  </body>
-	</html>
-	`;
+	</html>`;
 };
 module.exports = otpTemplate;
