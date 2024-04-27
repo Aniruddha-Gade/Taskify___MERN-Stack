@@ -52,6 +52,60 @@ exports.getAllTodos = async (req, res) => {
         })
 
     } catch (error) {
-        console.log(`Error while fetching use todos => ${error}`)
+        console.log(`Error while fetching all todos => ${error}`)
     }
 }
+
+
+// ==================== Update todos ====================
+exports.updateTodo = async (req, res) => {
+    try {
+        const { todoId, ...updates } = req.body;
+
+        // Check if todoId is provided
+        if (!todoId) {
+            return res.status(400).json({
+                success: false,
+                message: 'Todo ID is required...!'
+            });
+        }
+
+        // Find the todo by ID
+        const todo = await Todo.findById(todoId);
+
+        // If todo is not found, return a 404 response
+        if (!todo) {
+            return res.status(404).json({
+                success: false,
+                message: 'Todo not found.'
+            });
+        }
+
+        // Update each field in the todo with the provided updates
+        for (const key in updates) {
+            if (updates.hasOwnProperty(key)) {
+                todo[key] = updates[key];
+            }
+        }
+
+        // Update the updatedAt field
+        todo.updatedAt = Date.now();
+
+        // Save the updated todo
+        const updatedTodo = await todo.save();
+
+        // Send the updated todo in the response
+        res.status(200).json({
+            success: true,
+            message: 'Todo updated successfully.',
+            todo: updatedTodo
+        });
+    } catch (error) {
+        console.error('Error while updating todo => ', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error while updating todo',
+            error: error.message,
+        });
+    }
+};
