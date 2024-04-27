@@ -1,6 +1,7 @@
 const Todo = require('../models/todo')
 
-// create Todo
+
+// ==================== create Todo ====================
 exports.createTodo = async (req, res) => {
     try {
         const { title, description, date, isCompleted, isImportant, imageUrl, userId } = req.body
@@ -27,5 +28,30 @@ exports.createTodo = async (req, res) => {
 
     } catch (error) {
         console.log(`Error while creating todo => ${error}`)
+    }
+}
+
+
+// ==================== Get All todos ====================
+exports.getAllTodos = async (req, res) => {
+    try {
+        const { userId } = req.body
+
+        if (!userId) {
+            return res.status(401).json({
+                success: false,
+                message: 'User ID required..!'
+            });
+        }
+        const userAllTodos = await Todo.find({ userId }).sort({ createdAt: -1 })
+
+        res.status(200).json({
+            success: true,
+            message: "All user's todos fetched successfully",
+            data: userAllTodos
+        })
+
+    } catch (error) {
+        console.log(`Error while fetching use todos => ${error}`)
     }
 }
