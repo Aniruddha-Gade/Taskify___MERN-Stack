@@ -25,10 +25,12 @@ const TodoSchema = new mongoose.Schema({
     },
     isCompleted: {
         type: Boolean,
+        default:false,
         required: true,
     },
     isImportant: {
         type: Boolean,
+        default:false,
         required: true,
     },
     imageUrl: {
