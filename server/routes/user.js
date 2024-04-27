@@ -4,7 +4,7 @@ const router = express.Router();
 // Controllers
 const {
     signup,
-
+    sendOTP
 } = require('../controllers/auth');
 
 
@@ -13,7 +13,8 @@ const {
 // Route for user signup
 router.post('/signup', signup);
 
-
+// Route for sending OTP to the user's email
+router.post('/sendotp', sendOTP);
 
 
 

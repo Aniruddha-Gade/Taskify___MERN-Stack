@@ -3,6 +3,9 @@ const Profile = require('./../models/profile');
 const OTP = require('../models/OTP')
 const bcrypt = require('bcrypt');
 require('dotenv').config();
+const mailSender = require('../utils/mailSender');
+const otpTemplate = require('../mail/templates/emailVerificationTemplate');
+const optGenerator = require('otp-generator');
 
 
 
@@ -100,5 +103,62 @@ exports.signup = async (req, res) => {
             error: error.message,
             messgae: 'User cannot be registered , Please try again..!'
         })
+    }
+}
+
+
+// ================ SEND-OTP For Email Verification ================
+exports.sendOTP = async (req, res) => {
+    try {
+
+        // fetch email from re.body 
+        const { email } = req.body;
+
+        // check user already exist ?
+        const checkUserPresent = await User.findOne({ email });
+
+        // if exist then response
+        if (checkUserPresent) {
+            console.log('(when otp generate) User alreay registered')
+            return res.status(401).json({
+                success: false,
+                message: 'User is Already Registered'
+            })
+        }
+
+        // generate Otp
+        const otp = optGenerator.generate(6, {
+            upperCaseAlphabets: false,
+            lowerCaseAlphabets: false,
+            specialChars: false
+        })
+        // console.log('Your otp - ', otp);
+
+        const name = email.split('@')[0].split('.').map(part => part.replace(/\d+/g, '')).join(' ');
+        // console.log(name);
+
+        // send otp in mail
+        await mailSender(email, 'OTP Verification Email', otpTemplate(otp, name));
+
+        // create an entry for otp in DB
+        const otpBody = await OTP.create({ email, otp });
+        // console.log('otpBody - ', otpBody);
+
+
+        // return response successfully
+        res.status(200).json({
+            success: true,
+            otp,
+            message: 'Otp sent successfully'
+        });
+    }
+
+    catch (error) {
+        console.log('Error while generating Otp - ', error);
+        res.status(200).json({
+            success: false,
+            message: 'Error while generating Otp',
+            error: error.mesage
+        });
     }
 }
