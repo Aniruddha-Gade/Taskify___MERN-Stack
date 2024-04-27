@@ -6,7 +6,7 @@ require('dotenv').config();
 const mailSender = require('../utils/mailSender');
 const otpTemplate = require('../mail/templates/emailVerificationTemplate');
 const optGenerator = require('otp-generator');
-const jwt=require('jsonwebtoken')
+const jwt = require('jsonwebtoken')
 
 
 
@@ -234,6 +234,74 @@ exports.login = async (req, res) => {
             success: false,
             error: error.message,
             messgae: 'Error while Login user'
+        })
+    }
+}
+
+
+// ================ CHANGE PASSWORD ================
+exports.changePassword = async (req, res) => {
+    try {
+        // extract data
+        const { oldPassword, newPassword, confirmNewPassword, userId } = req.body;
+
+        // validation
+        if (!oldPassword || !newPassword || !confirmNewPassword) {
+            return res.status(403).json({
+                success: false,
+                message: 'All fileds are required'
+            });
+        }
+
+        // get user
+        const userDetails = await User.findById(userId);
+
+        // validate old passowrd entered correct or not
+        const isPasswordMatch = await bcrypt.compare(
+            oldPassword,
+            userDetails.password
+        )
+
+        // if old password not match 
+        if (!isPasswordMatch) {
+            return res.status(401).json({
+                success: false, message: "Old password is Incorrect"
+            });
+        }
+
+        // check both passwords are matched
+        if (newPassword !== confirmNewPassword) {
+            return res.status(403).json({
+                success: false,
+                message: 'The password and confirm password does not match'
+            })
+        }
+
+
+        // hash password
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+        // update in DB
+        // const updatedUserDetails = await User.findByIdAndUpdate(userId,
+        //     { password: hashedPassword },
+        //     { new: true });
+        userDetails.password = hashedPassword
+        await userDetails.save()
+
+        // return success response
+        res.status(200).json({
+            success: true,
+            mesage: 'Password changed successfully'
+        });
+    }
+
+    catch (error) {
+        console.log('Error while changing passowrd');
+        console.log(error)
+        res.status(500).json({
+            success: false,
+            error: error.message,
+            messgae: 'Error while changing passowrd'
         })
     }
 }
