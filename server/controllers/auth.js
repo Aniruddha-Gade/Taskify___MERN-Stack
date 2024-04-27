@@ -6,7 +6,7 @@ require('dotenv').config();
 const mailSender = require('../utils/mailSender');
 const otpTemplate = require('../mail/templates/emailVerificationTemplate');
 const optGenerator = require('otp-generator');
-
+const jwt=require('jsonwebtoken')
 
 
 
@@ -160,5 +160,80 @@ exports.sendOTP = async (req, res) => {
             message: 'Error while generating Otp',
             error: error.mesage
         });
+    }
+}
+
+
+// ================ LOGIN ================
+exports.login = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        // validation
+        if (!email || !password) {
+            return res.status(400).json({
+                success: false,
+                message: 'All fields are required..!'
+            });
+        }
+
+        // check user is registered and saved data in DB
+        let user = await User.findOne({ email }).populate('additionalDetails');
+
+        if (!user) {
+            return res.status(401).json({
+                success: false,
+                message: 'You are not registered with us'
+            });
+        }
+
+
+        // comapare given password and saved password from DB
+        if (await bcrypt.compare(password, user.password)) {
+            const payload = {
+                email: user.email,
+                id: user._id,
+            };
+
+            // Generate token 
+            const token = jwt.sign(payload, process.env.JWT_SECRET, {
+                expiresIn: "24h",
+            });
+
+            user = user.toObject();
+            user.token = token;
+            user.password = undefined; // we have remove password from object, not DB
+
+
+            // cookie
+            const cookieOptions = {
+                expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000), // 3 days
+                httpOnly: true
+            }
+
+            res.cookie('token', token, cookieOptions).status(200).json({
+                success: true,
+                user,
+                token,
+                message: 'User logged in successfully'
+            });
+        }
+        // password not match
+        else {
+            return res.status(401).json({
+                success: false,
+                message: 'Password not matched'
+            });
+        }
+    }
+
+    catch (error) {
+        console.log('Error while Login user');
+        console.log(error);
+        res.status(500).json({
+            success: false,
+            error: error.message,
+            messgae: 'Error while Login user'
+        })
     }
 }
