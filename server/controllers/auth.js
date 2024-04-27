@@ -83,6 +83,8 @@ exports.signup = async (req, res) => {
             image: `https://api.dicebear.com/5.x/initials/svg?seed=${firstName} ${lastName}`
         });
 
+        console.log(`User Registered Successfully ${userData}`)
+
         // return success message
         res.status(200).json({
             success: true,
