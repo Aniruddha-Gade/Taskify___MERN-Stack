@@ -1,4 +1,5 @@
 const Todo = require('../models/todo')
+const User = require('../models/user')
 
 
 // ==================== create Todo ====================
@@ -18,6 +19,13 @@ exports.createTodo = async (req, res) => {
 
         const newTodo = await Todo.create({
             title, description, date, isCompleted, isImportant, imageUrl, userId
+        })
+
+        // inserting new todo ID in user data (todos array)
+        await User.findByIdAndUpdate(userId, {
+            $push: {
+                todos: newTodo._id
+            }
         })
 
         // return success message
