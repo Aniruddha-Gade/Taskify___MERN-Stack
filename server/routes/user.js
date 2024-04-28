@@ -8,6 +8,8 @@ const {
     login,
     changePassword
 } = require('../controllers/auth');
+const { getUserDetails } = require('../controllers/user');
+const { auth } = require('../middleware/auth');
 
 
 
@@ -23,6 +25,9 @@ router.post('/login', login);
 
 // Route for change password
 router.post('/changePassword', changePassword);
+
+// Route for User Details
+router.post('/user-details', auth, getUserDetails);
 
 
 module.exports = router
