@@ -8,7 +8,7 @@ const {
     login,
     changePassword
 } = require('../controllers/auth');
-const { getUserDetails } = require('../controllers/user');
+const { getUserDetails, deleteAccount } = require('../controllers/user');
 const { auth } = require('../middleware/auth');
 
 
@@ -29,5 +29,7 @@ router.post('/changePassword', changePassword);
 // Route for User Details
 router.post('/user-details', auth, getUserDetails);
 
+// Route for Delete Account
+router.delete('/delete-account', auth, deleteAccount);
 
 module.exports = router
