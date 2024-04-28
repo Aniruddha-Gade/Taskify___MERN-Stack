@@ -91,6 +91,14 @@ exports.updateTodo = async (req, res) => {
             });
         }
 
+        // Check if the authenticated user is the owner of the todo
+        if (!todo.userId.equals(req.user.id)) {
+            return res.status(403).json({
+                success: false,
+                message: 'You are not authorized to update this todo.'
+            });
+        }
+
         // Update each field in the todo with the provided updates
         for (const key in updates) {
             if (updates.hasOwnProperty(key)) {
@@ -135,7 +143,7 @@ exports.deleteTodo = async (req, res) => {
         }
 
         // Find the todo by ID
-        const todo = await Todo.findByIdAndDelete(todoId);
+        const todo = await Todo.findById(todoId);
 
         // If todo is not found, return a 404 response
         if (!todo) {
@@ -144,6 +152,17 @@ exports.deleteTodo = async (req, res) => {
                 message: 'Todo not found.'
             });
         }
+
+        // Check if the authenticated user is the owner of the todo
+        if (!todo.userId.equals(req.user.id)) {
+            return res.status(403).json({
+                success: false,
+                message: 'You are not authorized to delete this todo.'
+            });
+        }
+
+        // delete todo
+        await Todo.findByIdAndDelete(todoId)
 
         // Send a success response
         res.status(200).json({
