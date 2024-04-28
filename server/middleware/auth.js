@@ -27,7 +27,12 @@ exports.auth = (req, res, next) => {
         try {
             const decode = jwt.verify(token, process.env.JWT_SECRET);
             // console.log('verified decode token => ', decode);
-
+            // example = {
+            //     email: 'tatyavinchu34@gmail.com',   
+            //     id: '662c9e999ce55c5d14d313c3',     
+            //     iat: 1714293554,
+            //     exp: 1714379954
+            //   }
             req.user = decode;
         }
         catch (error) {
