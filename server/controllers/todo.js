@@ -4,10 +4,11 @@ const Todo = require('../models/todo')
 // ==================== create Todo ====================
 exports.createTodo = async (req, res) => {
     try {
-        const { title, description, date, isCompleted, isImportant, imageUrl, userId } = req.body
+        const { title, description, date, isCompleted, isImportant, imageUrl } = req.body
         // console.log({
-        //     title, description, date, isCompleted, isImportant, imageUrl, userId
+        //     title, description, date, isCompleted, isImportant, imageUrl
         // })
+        const userId = req.user.id
         if (!title || !description || !date || !imageUrl || !userId) {
             return res.status(401).json({
                 success: false,
@@ -35,7 +36,8 @@ exports.createTodo = async (req, res) => {
 // ==================== Get All todos ====================
 exports.getAllTodos = async (req, res) => {
     try {
-        const { userId } = req.body
+        // const { userId } = req.body
+        const userId = req.user.id
 
         if (!userId) {
             return res.status(401).json({
