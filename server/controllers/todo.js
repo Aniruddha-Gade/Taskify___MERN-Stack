@@ -109,3 +109,43 @@ exports.updateTodo = async (req, res) => {
         });
     }
 };
+
+
+// ==================== Delete todos ====================
+exports.deleteTodo = async (req, res) => {
+    try {
+        const { todoId } = req.body;
+
+        // Check if todoId is provided
+        if (!todoId) {
+            return res.status(400).json({
+                success: false,
+                message: 'Please provide a todo ID to delete.'
+            });
+        }
+
+        // Find the todo by ID
+        const todo = await Todo.findByIdAndDelete(todoId);
+
+        // If todo is not found, return a 404 response
+        if (!todo) {
+            return res.status(404).json({
+                success: false,
+                message: 'Todo not found.'
+            });
+        }
+
+        // Send a success response
+        res.status(200).json({
+            success: true,
+            message: 'Todo deleted successfully.'
+        });
+    } catch (error) {
+        console.error('Error while deleting todo => ', error);
+        res.status(500).json({
+            success: false,
+            message: 'Error while deleting todo',
+            error: error.message,
+        });
+    }
+};
