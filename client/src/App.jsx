@@ -7,6 +7,7 @@ import Navbar from './components/common/Navbar';
 import Signup from './pages/Signup';
 import Login from "./pages/Login";
 import VerifyEmail from './pages/VerifyEmail';
+import OpenRoute from './components/core/auth/OpenRoute';
 
 function App() {
 
@@ -21,9 +22,30 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/dashboard" element={<Dashboard />} />
 
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/verify-email" element={<VerifyEmail />} />
+        {/* Open Route - for Only Non Logged-in User */}
+        <Route
+          path="signup" element={
+            <OpenRoute>
+              <Signup />
+            </OpenRoute>
+          }
+        />
+
+        <Route
+          path="login" element={
+            <OpenRoute>
+              <Login />
+            </OpenRoute>
+          }
+        />
+
+        <Route
+          path="verify-email" element={
+            <OpenRoute>
+              <VerifyEmail />
+            </OpenRoute>
+          }
+        />
 
 
       </Routes>
