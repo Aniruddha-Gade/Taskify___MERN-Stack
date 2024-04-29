@@ -16,8 +16,7 @@ const { passwordUpdated } = require("../mail/templates/passwordUpdate");
 exports.signup = async (req, res) => {
     try {
         // extract data 
-        const { firstName, lastName, email, password, confirmPassword,
-            contactNumber, otp } = req.body;
+        const { firstName, lastName, email, password, confirmPassword, otp } = req.body;
 
         // validation
         if (!firstName || !lastName || !email || !password || !confirmPassword || !otp) {
@@ -82,7 +81,7 @@ exports.signup = async (req, res) => {
 
         // create entry in DB
         const userData = await User.create({
-            firstName, lastName, email, password: hashedPassword, contactNumber,
+            firstName, lastName, email, password: hashedPassword,
             additionalDetails: profileDetails._id,
             image: `https://api.dicebear.com/5.x/initials/svg?seed=${firstName} ${lastName}`
         });
