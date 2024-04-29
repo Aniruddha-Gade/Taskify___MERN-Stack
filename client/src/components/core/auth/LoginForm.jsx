@@ -2,6 +2,7 @@ import { useState } from "react"
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { useDispatch } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
+import { login } from "../../../services/operations/authApi";
 
 
 function LoginForm() {
@@ -25,7 +26,8 @@ function LoginForm() {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-   
+    dispatch(login(email, password, navigate))
+
   }
 
   return (
