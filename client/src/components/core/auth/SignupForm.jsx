@@ -50,7 +50,7 @@ function SignupForm() {
     const signupData = {
       ...formData,
     };
-    console.log('signupData => ', signupData)
+    // console.log('signupData => ', signupData)
     // Setting signup data to state
     // To be used after otp verification
     dispatch(setSignupData(signupData));
