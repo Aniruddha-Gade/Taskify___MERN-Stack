@@ -4,6 +4,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Dashboard from './pages/Dashboard';
 import Navbar from "./components/Navbar";
+import Signup from './pages/Signup';
 
 function App() {
 
@@ -17,6 +18,10 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/dashboard" element={<Dashboard />} />
+
+        <Route path="/signup" element={<Signup />} />
+
+
       </Routes>
     </div>
   )
