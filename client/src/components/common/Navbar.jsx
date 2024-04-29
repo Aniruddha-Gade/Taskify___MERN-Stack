@@ -3,10 +3,12 @@ import { NavbarLinks } from '../../../constants/navbar-links'
 import { Link, matchPath, useLocation } from 'react-router-dom'
 
 import logo from '../../../public/images/taskify-logo.png'
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
 
   const location = useLocation();
+  const { token } = useSelector(state => state.auth)
 
   // when user click Navbar link then it will hold green color
   const matchRoute = (route) => {
@@ -68,22 +70,27 @@ const Navbar = () => {
 
       {/* Login / SignUp */}
       <div className='flex gap-x-4 items-center'>
-
-        <Link to="/login">
-          <button className={` px-[12px] py-[8px] text-richblack-100 rounded-md 
+        {
+          token === null && (
+            <Link to="/login">
+              <button className={` px-[12px] py-[8px] text-richblack-100 rounded-md 
                                  ${matchRoute('/login') ? 'border-[2.5px] border-yellow-50 bg-green-500 text-white' : 'border border-richblack-700 bg-richblack-800'} `}
-          >
-            Log in
-          </button>
-        </Link>
+              >
+                Log in
+              </button>
+            </Link>
+          )}
 
-        <Link to="/signup">
-          <button className={` px-[12px] py-[8px] text-richblack-100 rounded-md 
+        {
+          token === null && (
+            <Link to="/signup">
+              <button className={` px-[12px] py-[8px] text-richblack-100 rounded-md 
                                  ${matchRoute('/signup') ? 'border-[2.5px] border-yellow-50 bg-green-500 text-white' : 'border border-richblack-700 bg-richblack-800'} `}
-          >
-            Sign Up
-          </button>
-        </Link>
+              >
+                Sign Up
+              </button>
+            </Link>
+          )}
       </div>
 
     </nav>
