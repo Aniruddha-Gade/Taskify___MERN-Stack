@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { NavbarLinks } from '../../../constants/navbar-links'
 import { Link, matchPath, useLocation } from 'react-router-dom'
 
-import logo from '../../public/images/taskify-logo.png'
+import logo from '../../../public/images/taskify-logo.png'
 
 const Navbar = () => {
 
