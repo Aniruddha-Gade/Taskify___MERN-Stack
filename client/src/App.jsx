@@ -5,6 +5,7 @@ import About from './pages/About';
 import Dashboard from './pages/Dashboard';
 import Navbar from "./components/Navbar";
 import Signup from './pages/Signup';
+import Login from "./pages/Login";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
 
         <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
 
 
       </Routes>
