@@ -2,9 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.top {
+  background-color: #181818;
+}
+
+.show {
+  background-color: #020c1b;
+  backdrop-filter: blur(5.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  /* background-color: transparent; */
+}
+
+.hide {
+  transform: translateY(-70px);
+}
+
+/* ========================================== TAILWIND STYLES */
+@layer utilities {
+  .wrapper {
+    @apply max-w-7xl lg:mx-auto p-5  w-full;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
 }
