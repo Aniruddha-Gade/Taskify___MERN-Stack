@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
 import { NavbarLinks } from '../../../constants/navbar-links'
-import { Link, matchPath, useLocation } from 'react-router-dom'
+import { Link, matchPath, useLocation, useNavigate } from 'react-router-dom'
 
 import logo from '../../../public/images/taskify-logo.png'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../services/operations/authApi';
 
 const Navbar = () => {
 
   const location = useLocation();
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const { token } = useSelector(state => state.auth)
 
   // when user click Navbar link then it will hold green color
@@ -91,6 +94,19 @@ const Navbar = () => {
               </button>
             </Link>
           )}
+
+        {
+          token && (
+            <button className={` px-[12px] py-[8px] text-richblack-100 rounded-md border border-richblack-700 bg-richblack-800`}
+            onClick={() => {
+              dispatch(logout(navigate))
+              
+            }}
+           >
+              Log Out
+            </button>
+          )
+        }
       </div>
 
     </nav>
