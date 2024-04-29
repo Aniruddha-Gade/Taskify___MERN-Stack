@@ -3,6 +3,8 @@ import { toast } from "react-hot-toast"
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import { setSignupData } from "../../../slices/authSlice"
+import { sendOtp } from "../../../services/operations/authApi"
 
 
 
@@ -47,13 +49,25 @@ function SignupForm() {
     }
     const signupData = {
       ...formData,
-      accountType,
     };
+    console.log('signupData => ', signupData)
+    // Setting signup data to state
+    // To be used after otp verification
+    dispatch(setSignupData(signupData));
+    // Send OTP to user for verification
+    dispatch(sendOtp(formData.email, navigate));
 
-    
+    // Reset form data
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    })
   };
 
-  
+
 
   return (
     <div>
