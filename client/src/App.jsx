@@ -3,9 +3,10 @@ import Home from './pages/Home';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Dashboard from './pages/Dashboard';
-import Navbar from "./components/Navbar";
+import Navbar from './components/common/Navbar';
 import Signup from './pages/Signup';
 import Login from "./pages/Login";
+import VerifyEmail from './pages/VerifyEmail';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
 
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
 
 
       </Routes>
