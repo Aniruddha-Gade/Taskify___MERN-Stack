@@ -18,7 +18,7 @@ const Sidebar = () => {
 
 
     return (
-        <div className='flex flex-col items-center justify-between bg-[#212121] h-[calc(100%-70px)] w-[15rem] mt-[70px] rounded-2xl border-2 py-5 border-[#303030] '>
+        <div className='flex flex-col items-center justify-between bg-[#212121] h-[calc(100%-70px)] min-w-[15rem] mt-[70px] rounded-2xl border-2 py-5 border-[#303030] '>
             <div className='flex items-center gap-5 text-xl capitalize'>
                 <img src={imageUrl} className='w-14 rounded-full ' />
                 <p>{firstName} {' '} {lastName}</p>
