@@ -8,6 +8,7 @@ import Signup from './pages/Signup';
 import Login from "./pages/Login";
 import VerifyEmail from './pages/VerifyEmail';
 import OpenRoute from './components/core/auth/OpenRoute';
+import ProtectedRoute from "./components/core/auth/ProtectedRoute";
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
         <Route path="/" exact element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+
 
         {/* Open Route - for Only Non Logged-in User */}
         <Route
@@ -47,6 +48,15 @@ function App() {
           }
         />
 
+        {/* protected route */}
+        <Route
+          path='dashboard'
+          element={
+            <ProtectedRoute>
+              <Dashboard/>
+            </ProtectedRoute>
+          }
+        />
 
       </Routes>
     </div>
