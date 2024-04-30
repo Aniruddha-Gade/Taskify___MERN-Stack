@@ -112,7 +112,8 @@ export function login(email, password, navigate) {
       localStorage.setItem("token", JSON.stringify(response.data?.token));
 
       localStorage.setItem("user", JSON.stringify({ ...response.data.user, image: userImage }));
-
+      // const userData = localStorage.getItem('user')
+      // console.log("User data from local storage = ", userData)
       navigate("/dashboard");
     } catch (error) {
       console.log("LOGIN API ERROR.......", error)
