@@ -9,6 +9,11 @@ import Login from "./pages/Login";
 import VerifyEmail from './pages/VerifyEmail';
 import OpenRoute from './components/core/auth/OpenRoute';
 import ProtectedRoute from "./components/core/auth/ProtectedRoute";
+import Important from './components/core/dashboard/Important';
+import Completed from "./components/core/dashboard/Completed";
+import InComplete from "./components/core/dashboard/InComplete";
+import AllTasks from "./components/core/dashboard/AllTasks";
+
 
 function App() {
 
@@ -50,13 +55,19 @@ function App() {
 
         {/* protected route */}
         <Route
-          path='dashboard'
+          // path='dashboard'
           element={
             <ProtectedRoute>
-              <Dashboard/>
+              <Dashboard />
             </ProtectedRoute>
           }
-        />
+        >
+          <Route path='dashboard' element={<AllTasks />} />
+          <Route path='dashboard/important' element={<Important />} />
+          <Route path='dashboard/completed' element={<Completed />} />
+          <Route path='dashboard/incomplete' element={<InComplete />} />
+
+        </Route>
 
       </Routes>
     </div>
