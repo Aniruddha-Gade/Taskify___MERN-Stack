@@ -13,7 +13,7 @@ import ProtectedRoute from "./components/core/auth/ProtectedRoute";
 function App() {
 
   return (
-    <div className='w-full h-full bg-[#181818] text-white overflow-x-hidden'>
+    <div className='w-full h-full bg-blackBg text-white overflow-x-hidden'>
 
       <Navbar />
 
