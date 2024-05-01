@@ -20,7 +20,9 @@ const Tasks = ({ title, tasks, loading }) => {
           loading ? (
             <div className='text-7xl underline text-green-500'>Loading</div>
           ) : tasks.length === 0 ? (
-            <div className='text-7xl underline text-red-500'>No Tasks Available</div>
+            <div className='flex items-center justify-center p-5 h-64 w-[430px] font-semibold rounded-2xl text-red-500 bg-[#303030] border-2 border-[#454444] transition'>
+              No Tasks Available 🚫
+            </div>
           ) : (
             tasks.map((task) => (
               <TaskItem key={task.id} taskData={{ ...task }} />
