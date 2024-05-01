@@ -71,7 +71,7 @@ exports.getAllTodos = async (req, res) => {
 exports.updateTodo = async (req, res) => {
     try {
         const { todoId, ...updates } = req.body;
-        console.log('updates = ', updates.updatedData)
+        // console.log('updates = ', updates.updatedData)
         const updatedData = updates.updatedData
         // Check if todoId is provided
         if (!todoId) {
