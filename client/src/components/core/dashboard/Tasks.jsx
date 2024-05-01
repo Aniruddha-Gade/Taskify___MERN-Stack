@@ -1,6 +1,18 @@
 import React from 'react'
 import TaskItem from '../../common/TaskItem'
 
+// Loading Skeleton
+const LoadingSkeleton = () => {
+  return (
+    <div className="min-h-64 w-full max-w-[400px] flex flex-col justify-between gap-4 rounded-xl bg-[#303030 shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] p-3 border-2 border-[#454444] hover:cursor-wait">
+      <div className="skeleton rounded-xl w-20 h-5"></div>
+      <div className="skeleton rounded-xl w-56 h-5"></div>
+      <div className="skeleton w-full rounded-xl h-[150px] "></div>
+    </div>
+  )
+}
+
+
 const Tasks = ({ title, tasks, loading }) => {
 
   return (
@@ -17,8 +29,18 @@ const Tasks = ({ title, tasks, loading }) => {
       {/* tasks list */}
       <div className='grid grid-cols-2 w-full gap-4 mt-5'>
         {
-          loading ? (
-            <div className='text-7xl underline text-green-500'>Loading</div>
+          !loading ? (
+            <>
+              <div className=''>
+                <LoadingSkeleton />
+              </div>
+              <div className='hidden md:flex'>
+                <LoadingSkeleton />
+              </div>
+              <div className='hidden md:flex'>
+                <LoadingSkeleton />
+              </div>
+            </>
           ) : tasks.length === 0 ? (
             <div className='flex items-center justify-center p-5 h-64 w-[430px] font-semibold rounded-2xl text-red-500 bg-[#303030] border-2 border-[#454444] transition'>
               No Tasks Available 🚫
