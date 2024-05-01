@@ -50,11 +50,12 @@ export async function deleteTask(token, todoId) {
             throw new Error(response.data.message)
         }
 
+        toast.dismiss(toastId)
         toast.success('Todo Deleted')
         return response.data.data
 
     } catch (error) {
         console.log("DELETE TASK API ERROR --> ", error);
+        toast.dismiss(toastId)
     }
-    toast.dismiss(toastId)
 }
