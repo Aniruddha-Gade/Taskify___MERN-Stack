@@ -5,5 +5,6 @@ export const endpoints = {
   SENDOTP_API: BASE_URL + "/auth/sendotp",
   SIGNUP_API: BASE_URL + "/auth/signup",
   LOGIN_API: BASE_URL + "/auth/login",
+  USER_ALL_TASKS: BASE_URL + "/todo/all-todos"
 
 }
