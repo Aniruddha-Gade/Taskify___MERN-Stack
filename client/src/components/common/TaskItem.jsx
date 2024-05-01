@@ -1,6 +1,6 @@
 import React from 'react'
 import { MdDelete, MdEditDocument } from "react-icons/md";
-import { deleteTask } from '../../services/operations/todoApi';
+import { deleteTask, updateTask } from '../../services/operations/todoApi';
 import { useSelector } from 'react-redux';
 
 
@@ -11,6 +11,10 @@ const TaskItem = ({ taskData }) => {
 
     const handleDeleteTask = async () => {
         await deleteTask(token, todoId)
+    }
+
+    const updateIsCompleted = async () => {
+        await updateTask(token, todoId, !isCompleted)
     }
 
     return (
@@ -27,12 +31,10 @@ const TaskItem = ({ taskData }) => {
             <div>
                 <p>{date}</p>
                 <div className='flex items-center justify-between mt-2'>
-                    {
-                        isCompleted ? <button className='bg-green-500 p-2 px-4 rounded-2xl'>Completed</button>
-                            : <button className='bg-red-500 p-2 px-4 rounded-2xl'>
-                                Incomplete
-                            </button>
-                    }
+                    <button className={`p-2 px-4 rounded-2xl ${isCompleted ? 'bg-green-500' : 'bg-red-500'} `}>
+                        {isCompleted ? 'Completed' : 'Incomplete'}
+                    </button>
+
                     <div className='flex gap-4 text-3xl text-white/75'>
                         <MdDelete onClick={() => handleDeleteTask()} className='cursor-pointer hover:text-red-500 duration-200' />
                         <MdEditDocument />
