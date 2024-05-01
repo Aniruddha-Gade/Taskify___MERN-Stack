@@ -34,7 +34,7 @@ const TaskItem = ({ taskData }) => {
                             </button>
                     }
                     <div className='flex gap-4 text-3xl text-white/75'>
-                        <MdDelete onClick={() => handleDeleteTask()} />
+                        <MdDelete onClick={() => handleDeleteTask()} className='cursor-pointer hover:text-red-500 duration-200' />
                         <MdEditDocument />
                     </div>
                 </div>
