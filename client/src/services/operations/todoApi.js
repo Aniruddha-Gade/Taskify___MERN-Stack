@@ -4,7 +4,8 @@ import { endpoints } from '../apis';
 
 
 const {
-    USER_ALL_TASKS
+    USER_ALL_TASKS,
+    DELETE_TASK
 } = endpoints
 
 
@@ -29,4 +30,31 @@ export async function allTasks(token) {
     } catch (error) {
         console.log("USER'S ALL TASKS API ERROR --> ", error);
     }
+}
+
+
+// ================ Delete Task ================
+export async function deleteTask(token, todoId) {
+    const toastId = toast.loading('Deleting Todo...')
+    try {
+        const response = await apiConnector("DELETE", DELETE_TASK, { todoId },
+            {
+                Authorization: `Bearer ${token}`,
+            }
+        )
+
+        console.log(`DELETE TASK ---> `, response.data)
+
+        if (!response.data.success) {
+            toast.error(response.data.success);
+            throw new Error(response.data.message)
+        }
+
+        toast.success('Todo Deleted')
+        return response.data.data
+
+    } catch (error) {
+        console.log("DELETE TASK API ERROR --> ", error);
+    }
+    toast.dismiss(toastId)
 }

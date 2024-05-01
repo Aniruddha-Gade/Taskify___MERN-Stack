@@ -1,10 +1,18 @@
 import React from 'react'
 import { MdDelete, MdEditDocument } from "react-icons/md";
+import { deleteTask } from '../../services/operations/todoApi';
+import { useSelector } from 'react-redux';
 
 
 const TaskItem = ({ taskData }) => {
     // console.log('taskData = ', taskData)
-    const { title, description, date, isCompleted, id } = taskData
+    const { title, description, date, isCompleted, _id: todoId } = taskData
+    const { user: { token } } = useSelector(state => state.profile)
+
+    const handleDeleteTask = async () => {
+        await deleteTask(token, todoId)
+    }
+
     return (
         <div className="flex flex-col justify-between p-5 gap-2 h-64 w-[430px] font-semibold rounded-2xl bg-[#303030] border-2 border-[#454444] transition ">
             <div className='flex flex-col gap-2'>
@@ -26,7 +34,7 @@ const TaskItem = ({ taskData }) => {
                             </button>
                     }
                     <div className='flex gap-4 text-3xl text-white/75'>
-                        <MdDelete />
+                        <MdDelete onClick={() => handleDeleteTask()} />
                         <MdEditDocument />
                     </div>
                 </div>
