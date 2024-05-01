@@ -6,6 +6,7 @@ export const endpoints = {
   SIGNUP_API: BASE_URL + "/auth/signup",
   LOGIN_API: BASE_URL + "/auth/login",
   USER_ALL_TASKS: BASE_URL + "/todo/all-todos",
-  DELETE_TASK: BASE_URL + "/todo/delete-todo"
+  DELETE_TASK: BASE_URL + "/todo/delete-todo",
+  UPDATE_TASK: BASE_URL + "/todo/update-todo",
 
 }
