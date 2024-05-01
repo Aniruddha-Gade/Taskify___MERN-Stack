@@ -71,7 +71,8 @@ exports.getAllTodos = async (req, res) => {
 exports.updateTodo = async (req, res) => {
     try {
         const { todoId, ...updates } = req.body;
-
+        console.log('updates = ', updates.updatedData)
+        const updatedData = updates.updatedData
         // Check if todoId is provided
         if (!todoId) {
             return res.status(400).json({
@@ -100,9 +101,9 @@ exports.updateTodo = async (req, res) => {
         }
 
         // Update each field in the todo with the provided updates
-        for (const key in updates) {
-            if (updates.hasOwnProperty(key)) {
-                todo[key] = updates[key];
+        for (const key in updatedData) {
+            if (updatedData.hasOwnProperty(key)) {
+                todo[key] = updatedData[key];
             }
         }
 

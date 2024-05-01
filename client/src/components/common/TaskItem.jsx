@@ -13,8 +13,16 @@ const TaskItem = ({ taskData }) => {
         await deleteTask(token, todoId)
     }
 
+    // update isCompleted state
     const updateIsCompleted = async () => {
-        await updateTask(token, todoId, !isCompleted)
+        let updatedData;
+        if (isCompleted) {
+            updatedData = { isCompleted: false }
+        }
+        else {
+            updatedData = { isCompleted: true }
+        }
+        await updateTask(token, todoId, updatedData)
     }
 
     return (
@@ -31,7 +39,10 @@ const TaskItem = ({ taskData }) => {
             <div>
                 <p>{date}</p>
                 <div className='flex items-center justify-between mt-2'>
-                    <button className={`p-2 px-4 rounded-2xl ${isCompleted ? 'bg-green-500' : 'bg-red-500'} `}>
+                    <button
+                        onClick={updateIsCompleted}
+                        className={`p-2 px-4 rounded-2xl ${isCompleted ? 'bg-green-500' : 'bg-red-500'} `}
+                    >
                         {isCompleted ? 'Completed' : 'Incomplete'}
                     </button>
 
