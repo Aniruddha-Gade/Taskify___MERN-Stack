@@ -4,7 +4,7 @@ import TaskItem from '../../common/TaskItem'
 // Loading Skeleton
 const LoadingSkeleton = () => {
   return (
-    <div className="min-h-64 w-full max-w-[400px] flex flex-col justify-between gap-4 rounded-xl bg-[#303030 shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] p-3 border-2 border-[#454444] hover:cursor-wait">
+    <div className="min-h-64 w-full min-w-[400px] flex flex-col justify-between gap-4 rounded-xl bg-[#303030 shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] p-3 border-2 border-[#454444] hover:cursor-wait">
       <div className="skeleton rounded-xl w-20 h-5"></div>
       <div className="skeleton rounded-xl w-56 h-5"></div>
       <div className="skeleton w-full rounded-xl h-[150px] "></div>
@@ -29,7 +29,7 @@ const Tasks = ({ title, tasks, loading }) => {
       {/* tasks list */}
       <div className='grid grid-cols-1 lg:grid-cols-2 place-items-center w-full gap-4 mt-5'>
         {
-          loading ? (
+          !loading ? (
             <>
               <div className=''>
                 <LoadingSkeleton />
