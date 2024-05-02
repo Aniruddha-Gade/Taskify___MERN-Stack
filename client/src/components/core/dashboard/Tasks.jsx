@@ -47,7 +47,7 @@ const Tasks = ({ title, tasks, loading }) => {
                 <LoadingSkeleton />
               </div>
             </>
-          ) : tasks.length === 0 ? (
+          ) : !tasks || tasks?.length === 0 ? (
             <div className='flex items-center justify-center p-5 h-64 w-[430px] font-semibold rounded-2xl text-red-500 bg-[#303030] border-2 border-[#454444] transition'>
               No Tasks Available 🚫
             </div>
