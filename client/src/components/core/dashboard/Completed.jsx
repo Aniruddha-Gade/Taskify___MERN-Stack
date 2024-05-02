@@ -26,7 +26,7 @@ const Completed = () => {
 
   return (
     <div className='flex bg-[#212121] min-h-screen min-w-full mt-[70px] rounded-2xl border-2 p-5 border-[#303030]'>
-      <Tasks title="All Tasks" tasks={tasks} loading={loading} />
+      <Tasks title="Completed Tasks 👍" tasks={tasks} loading={loading} />
     </div>
   )
 }
