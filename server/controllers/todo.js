@@ -78,7 +78,7 @@ exports.getImportantTodos = async (req, res) => {
                 message: 'User ID required..!'
             });
         }
-        const userAllTodos = await Todo.find({ userId, isImportant:true }).sort({ createdAt: -1 })
+        const userAllTodos = await Todo.find({ userId, isImportant: true }).sort({ createdAt: -1 })
 
         res.status(200).json({
             success: true,
@@ -88,6 +88,31 @@ exports.getImportantTodos = async (req, res) => {
 
     } catch (error) {
         console.log(`Error while fetching Important todos => ${error}`)
+    }
+}
+
+
+// ==================== Get All todos ====================
+exports.getCompletedTodos = async (req, res) => {
+    try {
+        const userId = req.user.id
+
+        if (!userId) {
+            return res.status(401).json({
+                success: false,
+                message: 'User ID required..!'
+            });
+        }
+        const userCompletedTodos = await Todo.find({ userId, isCompleted: true }).sort({ createdAt: -1 })
+
+        res.status(200).json({
+            success: true,
+            message: "All Completed todos fetched successfully",
+            data: userCompletedTodos
+        })
+
+    } catch (error) {
+        console.log(`Error while fetching Completed todos => ${error}`)
     }
 }
 
