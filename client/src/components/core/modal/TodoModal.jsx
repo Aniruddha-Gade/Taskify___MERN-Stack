@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useForm } from "react-hook-form"
-import moment from 'moment';
 import { createTask, updateTask } from '../../../services/operations/todoApi';
 
 // icons
@@ -32,13 +31,9 @@ const TodoModal = ({ showModal, setShowModal, type, selectedTodo }) => {
     const onSubmit = async (data) => {
 
         console.log("Form values are => ", data)
-        const formattedDate = moment(data.date).format('DD-MM-YYYY'); // Format date
-        console.log("formattedDate => ", formattedDate)
-        const { title, description, isCompleted, isImportant } = data
-
 
         if (type === 'create') {
-            await createTask(token, { title, description, isCompleted, isImportant, formattedDate });
+            await createTask(token, data);
         } else if (type === 'update') {
             await updateTask(token, selectedTodo._id, data);
         }

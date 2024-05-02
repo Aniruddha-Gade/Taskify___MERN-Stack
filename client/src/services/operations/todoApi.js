@@ -95,9 +95,9 @@ export async function updateTask(token, todoId, updatedData) {
 export async function createTask(token, todoData) {
 
     const toastId = toast.loading('Creating Todo...')
-    const { title, description, formattedDate, isCompleted, isImportant } = todoData
+    const { title, description, date, isCompleted, isImportant } = todoData
     try {
-        const response = await apiConnector("POST", CREATE_TASK, { title, description, date:formattedDate, isCompleted, isImportant },
+        const response = await apiConnector("POST", CREATE_TASK, { title, description, date, isCompleted, isImportant },
             {
                 Authorization: `Bearer ${token}`,
             }
