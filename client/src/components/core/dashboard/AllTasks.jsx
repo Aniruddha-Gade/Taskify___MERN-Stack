@@ -25,7 +25,7 @@ const AllTasks = () => {
   }, [dispatch, token])
 
   return (
-    <div className='flex bg-[#212121] h-[calc(100%-70px) h-full min-w-full mt-[70px] rounded-2xl border-2 p-5 border-[#303030]'>
+    <div className='flex bg-[#212121] h-screen min-w-full mt-[70px] rounded-2xl border-2 p-5 border-[#303030]'>
       <Tasks title="All Tasks" tasks={tasks} loading={loading} />
     </div >
   )
