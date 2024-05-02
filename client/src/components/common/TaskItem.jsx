@@ -1,13 +1,15 @@
-import React from 'react'
+import { useState } from 'react'
 import { MdDelete, MdEditDocument } from "react-icons/md";
 import { deleteTask, updateTask } from '../../services/operations/todoApi';
 import { useSelector } from 'react-redux';
+import TodoModal from '../core/modal/TodoModal';
 
 
 const TaskItem = ({ taskData }) => {
     // console.log('taskData = ', taskData)
     const { title, description, date, isCompleted, _id: todoId } = taskData
     const { user: { token } } = useSelector(state => state.profile)
+    const [showModal, setShowModal] = useState(false);
 
     const handleDeleteTask = async () => {
         await deleteTask(token, todoId)
@@ -48,10 +50,11 @@ const TaskItem = ({ taskData }) => {
 
                     <div className='flex gap-4 text-3xl text-white/75'>
                         <MdDelete onClick={() => handleDeleteTask()} className='cursor-pointer hover:text-red-500 duration-200' />
-                        <MdEditDocument />
+                        <MdEditDocument onClick={() => setShowModal(true)} className='cursor-pointer hover:text-green-500 duration-200' />
                     </div>
                 </div>
             </div>
+            <TodoModal showModal={showModal} setShowModal={setShowModal} type={'update'} selectedTodo={taskData} />
 
         </div>
     )

@@ -40,7 +40,7 @@ const TodoModal = ({ showModal, setShowModal, type, selectedTodo }) => {
         if (type === 'create') {
             await createTask(token, { title, description, isCompleted, isImportant, formattedDate });
         } else if (type === 'update') {
-            // await updateTask(token, selectedTodo._id, formData);
+            await updateTask(token, selectedTodo._id, data);
         }
 
         reset()
