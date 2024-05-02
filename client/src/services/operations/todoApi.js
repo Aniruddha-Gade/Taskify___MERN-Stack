@@ -7,7 +7,8 @@ const {
     USER_ALL_TASKS,
     DELETE_TASK,
     UPDATE_TASK,
-    CREATE_TASK
+    CREATE_TASK,
+    IMPORTANT_TASK
 } = endpoints
 
 
@@ -31,6 +32,31 @@ export async function allTasks(token) {
 
     } catch (error) {
         console.log("USER'S ALL TASKS API ERROR --> ", error);
+    }
+}
+
+
+
+// ================ users all tasks ================
+export async function importantTasks(token) {
+    try {
+        const response = await apiConnector("GET", IMPORTANT_TASK, null,
+            {
+                Authorization: `Bearer ${token}`,
+            }
+        )
+
+        console.log(`USER'S IMPORTANT TASKS ---> `, response.data)
+
+        if (!response.data.success) {
+            toast.error(response.data.success);
+            throw new Error(response.data.message)
+        }
+
+        return response.data.data
+
+    } catch (error) {
+        console.log("USER'S IMPORTANT TASKS API ERROR --> ", error);
     }
 }
 
