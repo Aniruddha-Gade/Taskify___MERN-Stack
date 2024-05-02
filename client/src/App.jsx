@@ -13,6 +13,7 @@ import Important from './components/core/dashboard/Important';
 import Completed from "./components/core/dashboard/Completed";
 import InComplete from "./components/core/dashboard/InComplete";
 import AllTasks from "./components/core/dashboard/AllTasks";
+import TodoDetails from "./components/core/dashboard/TodoDetails";
 
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
           <Route path='dashboard/important' element={<Important />} />
           <Route path='dashboard/completed' element={<Completed />} />
           <Route path='dashboard/incomplete' element={<InComplete />} />
+          <Route path='dashboard/todo/:todoId' element={<TodoDetails />} />
 
         </Route>
 

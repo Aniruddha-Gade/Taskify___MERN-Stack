@@ -10,7 +10,8 @@ const {
     CREATE_TASK,
     IMPORTANT_TASK,
     COMPLETED_TASK,
-    INCOMPLETE_TASK
+    INCOMPLETE_TASK,
+    TASK_DETAILS
 } = endpoints
 
 
@@ -193,5 +194,29 @@ export async function createTask(token, todoData) {
     } catch (error) {
         console.log("CREATE TASK API ERROR --> ", error);
         toast.dismiss(toastId)
+    }
+}
+
+
+// ================ users task details ================
+export async function getTaskDetails(token, todoId) {
+    try {
+        const response = await apiConnector("POST", TASK_DETAILS, { todoId },
+            {
+                Authorization: `Bearer ${token}`,
+            }
+        )
+
+        console.log(`USER'S TASK DETAILS ---> `, response.data)
+
+        if (!response.data.success) {
+            toast.error(response.data.success);
+            throw new Error(response.data.message)
+        }
+
+        return response.data.data
+
+    } catch (error) {
+        console.log("USER'S TASKS DETAILS API ERROR --> ", error);
     }
 }

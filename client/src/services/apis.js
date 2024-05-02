@@ -12,5 +12,6 @@ export const endpoints = {
   IMPORTANT_TASK: BASE_URL + "/todo/important-todos",
   COMPLETED_TASK: BASE_URL + "/todo/completed-todos",
   INCOMPLETE_TASK: BASE_URL + "/todo/incomplete-todos",
+  TASK_DETAILS: BASE_URL + "/todo/todo-details",
 
 }

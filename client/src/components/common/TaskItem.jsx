@@ -3,6 +3,7 @@ import { MdDelete, MdEditDocument } from "react-icons/md";
 import { deleteTask, updateTask } from '../../services/operations/todoApi';
 import { useSelector } from 'react-redux';
 import TodoModal from '../core/modal/TodoModal';
+import { Link } from 'react-router-dom';
 
 
 const TaskItem = ({ taskData }) => {
@@ -31,11 +32,12 @@ const TaskItem = ({ taskData }) => {
         <div className="flex flex-col justify-between p-5 gap-2 h-64 w-[400px] font-semibold rounded-2xl bg-[#303030] border-2 border-[#454444] transition ">
             <div className='flex flex-col gap-2 relative'>
                 {isImportant && <p className='absolute right-0 top-0 '>📌</p>}
-                <h4>
-                    {title}
-                </h4>
+                {/* title of todo */}
+                <Link to={`/dashboard/todo/${todoId}`} className='hover:underline'>
+                    <h3>{title}</h3>
+                </Link>
                 <p className="text-white/55">
-                    {description.split(' ').slice(0, 15).join(' ')}...
+                    {description?.split(' ').slice(0, 15).join(' ')}...
                 </p>
             </div>
 
