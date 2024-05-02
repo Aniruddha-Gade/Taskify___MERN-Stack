@@ -277,9 +277,16 @@ exports.getTodoDetails = async (req, res) => {
         }
         const todoDetails = await Todo.findById(todoId).where({ userId: userId });
 
+        if (!todoDetails) {
+            res.status(404).json({
+                success: false,
+                message: "Todo NOT found",
+            })
+        }
+
         res.status(200).json({
             success: true,
-            message: "Todos Details fetched successfully",
+            message: "Todo Details fetched successfully",
             data: todoDetails
         })
 
