@@ -12,7 +12,7 @@ const TodoSchema = new mongoose.Schema({
         trim: true
     },
     date: {
-        type: Date,
+        type: String,
         required: true,
     },
     updatedAt: {
