@@ -67,7 +67,7 @@ exports.getAllTodos = async (req, res) => {
 }
 
 
-// ==================== Get All todos ====================
+// ==================== Get Important todos ====================
 exports.getImportantTodos = async (req, res) => {
     try {
         const userId = req.user.id
@@ -92,7 +92,7 @@ exports.getImportantTodos = async (req, res) => {
 }
 
 
-// ==================== Get All todos ====================
+// ==================== Get Complete todos ====================
 exports.getCompletedTodos = async (req, res) => {
     try {
         const userId = req.user.id
@@ -115,6 +115,32 @@ exports.getCompletedTodos = async (req, res) => {
         console.log(`Error while fetching Completed todos => ${error}`)
     }
 }
+
+
+// ==================== Get Incomplete todos ====================
+exports.getInCompleteTodos = async (req, res) => {
+    try {
+        const userId = req.user.id
+
+        if (!userId) {
+            return res.status(401).json({
+                success: false,
+                message: 'User ID required..!'
+            });
+        }
+        const userInCompletedTodos = await Todo.find({ userId, isCompleted: false }).sort({ createdAt: -1 })
+
+        res.status(200).json({
+            success: true,
+            message: "All InComplete todos fetched successfully",
+            data: userInCompletedTodos
+        })
+
+    } catch (error) {
+        console.log(`Error while fetching InComplete todos => ${error}`)
+    }
+}
+
 
 // ==================== Update todos ====================
 exports.updateTodo = async (req, res) => {
