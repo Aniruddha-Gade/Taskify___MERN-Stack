@@ -27,8 +27,8 @@ const Tasks = ({ title, tasks, loading }) => {
         <h3 className='text-2xl font-bold'>
           {title}
         </h3>
-        <button className='text-3xl w-12 h-12 flex-center rounded-full border-2 border-[#303030]'>
-          +
+        <button onClick={() => setShowModal(!showModal)} className='text-xl w-12 h-12 flex-center rounded-full border-2 border-[#303030]'>
+          <FaPlus />
         </button>
       </div>
 
@@ -66,11 +66,9 @@ const Tasks = ({ title, tasks, loading }) => {
           <FaPlus className='text-2xl' />
           Add New Task
         </button>
-        <TodoModal showModal={showModal} setShowModal={setShowModal} type={'create'} />
       </div>
 
-
-
+      <TodoModal showModal={showModal} setShowModal={setShowModal} type={'create'} />
     </div>
   )
 }
