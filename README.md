@@ -1,5 +1,5 @@
 
-<img height="150" src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/client/public/images/taskify-logo.png' />
+<img height="100" src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/client/public/images/taskify-logo.png' />
 
 # Project Description 📝
 The Taskify allows users to manage their tasks effectively with features including login and logout functionality, <br/>
