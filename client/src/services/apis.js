@@ -8,5 +8,6 @@ export const endpoints = {
   USER_ALL_TASKS: BASE_URL + "/todo/all-todos",
   DELETE_TASK: BASE_URL + "/todo/delete-todo",
   UPDATE_TASK: BASE_URL + "/todo/update-todo",
+  CREATE_TASK: BASE_URL + "/todo/create-todo",
 
 }

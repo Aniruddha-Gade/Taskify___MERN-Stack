@@ -6,7 +6,8 @@ import { endpoints } from '../apis';
 const {
     USER_ALL_TASKS,
     DELETE_TASK,
-    UPDATE_TASK
+    UPDATE_TASK,
+    CREATE_TASK
 } = endpoints
 
 
@@ -85,6 +86,36 @@ export async function updateTask(token, todoId, updatedData) {
 
     } catch (error) {
         console.log("UPDATE TASK API ERROR --> ", error);
+        toast.dismiss(toastId)
+    }
+}
+
+
+// ================ Update Task ================
+export async function createTask(token, todoData) {
+
+    const toastId = toast.loading('Updating Todo...')
+    const { title, description, formattedDate, isCompleted, isImportant } = todoData
+    try {
+        const response = await apiConnector("POST", CREATE_TASK, { title, description, date:formattedDate, isCompleted, isImportant },
+            {
+                Authorization: `Bearer ${token}`,
+            }
+        )
+
+        console.log(`CREATED TASK RESPONSE ---> `, response.data)
+
+        if (!response.data.success) {
+            toast.error(response.data.success);
+            throw new Error(response.data.message)
+        }
+
+        toast.dismiss(toastId)
+        toast.success('Todo Created')
+        return response.data.data
+
+    } catch (error) {
+        console.log("CREATE TASK API ERROR --> ", error);
         toast.dismiss(toastId)
     }
 }
