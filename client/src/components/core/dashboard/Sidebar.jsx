@@ -1,7 +1,7 @@
-import { logout } from '../../services/operations/authApi';
+import { logout } from '../../../services/operations/authApi';
 import { useSelector, useDispatch } from 'react-redux';
-import { sidebarMenu } from './../../../constants/index';
-import { Link, useNavigate } from 'react-router-dom';
+import { sidebarMenu } from '../../../../constants/index';
+import { Link, matchPath, useNavigate } from 'react-router-dom';
 
 // icons
 import { FaSignOutAlt } from "react-icons/fa";
@@ -15,6 +15,10 @@ const Sidebar = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
+    // when user click sidebar link then it will hold green color
+    const matchRoute = (route) => {
+        return matchPath({ path: route }, location.pathname);
+    }
 
 
     return (
@@ -30,8 +34,12 @@ const Sidebar = () => {
                         <Link
                             key={link.id}
                             to={link.link}
-                            className='flex items-center gap-5 px-8 py-2 w-full text-white/60 hover:bg-[#303030] duration-300'
+                            className={`${matchRoute(link?.link) ? "bg-[#3a3a3a] text-white" : "text-white/40 hover:bg-[#30303097]"} flex items-center gap-5 px-8 py-2 w-full
+                                       duration-300 relative`}
                         >
+                            <span
+                                className={`absolute left-0 top-0 h-full w-[0.30rem] rounded-r-3xl bg-green-500 ${matchRoute(link.link) ? "opacity-100" : "opacity-0"}`}>
+                            </span>
                             {<link.icon />}
                             <p>{link.title}</p>
                         </Link>
