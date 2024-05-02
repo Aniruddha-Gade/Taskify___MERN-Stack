@@ -61,8 +61,10 @@ const Navbar = () => {
       <ul className='flex justify-between items-center gap-x-5 text-xl  text-white '>
         {
           NavbarLinks.map((link) => (
-            <li key={link.title} className={`${matchRoute(link?.path) ? "bg-green-500 " : "text-richblack-25 hover:text-green-500"} rounded-xl p-2 px-5 duration-300`}>
-              <Link to={link.path}>
+            <li key={link.title}>
+              <Link
+                to={link.path}
+                className={`${matchRoute(link?.path) ? "bg-green-500 " : "text-richblack-25 hover:text-green-500"} rounded-xl p-2 px-5 duration-300`}>
                 {link.title}
               </Link>
             </li>
@@ -98,11 +100,11 @@ const Navbar = () => {
         {
           token && (
             <button className={` px-[12px] py-[8px] text-richblack-100 rounded-md border border-richblack-700 bg-richblack-800`}
-            onClick={() => {
-              dispatch(logout(navigate))
-              
-            }}
-           >
+              onClick={() => {
+                dispatch(logout(navigate))
+
+              }}
+            >
               Log Out
             </button>
           )
