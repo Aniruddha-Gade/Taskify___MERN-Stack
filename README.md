@@ -136,7 +136,7 @@ Hashed password using Bcrypt library
 
 
 
-5. Run the development server: 🚀
+5. Run the server & Client: 🚀
 
    ```bash
    npm run dev
