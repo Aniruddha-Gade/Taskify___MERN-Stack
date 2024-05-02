@@ -156,7 +156,7 @@ Contributions are welcome!
 - **MongoDB**: 📊 For flexible and scalable data storage.
 
 
-##  🖥️ Screen Preview :
+##  Screen Preview 🖥️  
 
 Sure, here are the headings with proper emojis:
 
