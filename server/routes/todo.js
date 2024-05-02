@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { createTodo, getAllTodos, updateTodo, deleteTodo, getImportantTodos, getCompletedTodos, getInCompleteTodos } = require('../controllers/todo');
+const { createTodo, getAllTodos, updateTodo, deleteTodo, getImportantTodos, getCompletedTodos, getInCompleteTodos, getTodoDetails } = require('../controllers/todo');
 const { auth } = require('../middleware/auth');
 
 // create todo route
@@ -12,6 +12,7 @@ router.get('/completed-todos', auth, getCompletedTodos)
 router.get('/incomplete-todos', auth, getInCompleteTodos)
 router.put('/update-todo', auth, updateTodo)
 router.delete('/delete-todo', auth, deleteTodo)
+router.post('/todo-details', auth, getTodoDetails)
 
 
 module.exports = router

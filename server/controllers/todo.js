@@ -254,3 +254,36 @@ exports.deleteTodo = async (req, res) => {
         });
     }
 };
+
+
+// ==================== Get todo Details ====================
+exports.getTodoDetails = async (req, res) => {
+    try {
+        const { todoId } = req.body
+        const userId = req.user.id
+
+        if (!userId) {
+            return res.status(401).json({
+                success: false,
+                message: 'User ID required..!'
+            });
+        }
+
+        if (!todoId) {
+            return res.status(401).json({
+                success: false,
+                message: 'Todo ID required..!'
+            });
+        }
+        const todoDetails = await Todo.findById(todoId).where({ userId: userId });
+
+        res.status(200).json({
+            success: true,
+            message: "Todos Details fetched successfully",
+            data: todoDetails
+        })
+
+    } catch (error) {
+        console.log(`Error while fetching todos details => ${error}`)
+    }
+}
