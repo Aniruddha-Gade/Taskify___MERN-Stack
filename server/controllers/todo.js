@@ -5,12 +5,12 @@ const User = require('../models/user')
 // ==================== create Todo ====================
 exports.createTodo = async (req, res) => {
     try {
-        const { title, description, date, isCompleted, isImportant, imageUrl } = req.body
+        const { title, description, date, isCompleted, isImportant } = req.body
         // console.log({
         //     title, description, date, isCompleted, isImportant, imageUrl
         // })
         const userId = req.user.id
-        if (!title || !description || !date || !imageUrl || !userId) {
+        if (!title || !description || !date || !userId) {
             return res.status(401).json({
                 success: false,
                 message: 'All fields are required..!'
