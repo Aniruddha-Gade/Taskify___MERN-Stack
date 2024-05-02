@@ -56,11 +56,12 @@ Hashed password using Bcrypt library
 - **Navigation and Routing with React Router**: 🛣️ Seamless navigation between different pages of the application using React Router.
 - **Todo List displaying items fetched from a mock API endpoint**: 📝 Display a list of todo items retrieved from a mock API endpoint.
 - **CRUD Operations for todo items**: ✍️ Perform basic CRUD (Create, Read, Update, Delete) operations on todo items.
-- **Authentication using JWT tokens**: 🔐 Implement authentication using JWT tokens for secure user access.
+- **Authentication and Authorization using JWT tokens**: 🔐 Implement authentication using JWT tokens for secure user access.
 - **State management using React hooks**: 🎣 Utilize Redux Toolkit and React hooks for efficient state management within the application.
 - **Hash Password with bcrypt**: 🔒 Enhance security by securely hashing user passwords using the bcrypt library.
 - **Reusable Todo Modal Component**: 🔄 Implement a reusable component for creating and updating todo items, enhancing code maintainability and reusability.
 - **Reusable Todo Display Components**: 🔄 Utilize reusable components to display all todos, including incomplete, completed, and important todos, streamlining the UI and promoting code modularity.
+- Loading Skeleton: 💀 loading skeletons to enhance user experience while fetching data.
 
 ## Getting Started: 💡
 
