@@ -9,7 +9,8 @@ const {
     UPDATE_TASK,
     CREATE_TASK,
     IMPORTANT_TASK,
-    COMPLETED_TASK
+    COMPLETED_TASK,
+    INCOMPLETE_TASK
 } = endpoints
 
 
@@ -84,6 +85,31 @@ export async function completedTasks(token) {
         console.log("USER'S COMPLETED TASKS API ERROR --> ", error);
     }
 }
+
+
+// ================ users all tasks ================
+export async function inCompleteTasks(token) {
+    try {
+        const response = await apiConnector("GET", INCOMPLETE_TASK, null,
+            {
+                Authorization: `Bearer ${token}`,
+            }
+        )
+
+        console.log(`USER'S INCOMPLETED TASKS ---> `, response.data)
+
+        if (!response.data.success) {
+            toast.error(response.data.success);
+            throw new Error(response.data.message)
+        }
+
+        return response.data.data
+
+    } catch (error) {
+        console.log("USER'S INCOMPLETED TASKS API ERROR --> ", error);
+    }
+}
+
 
 // ================ Delete Task ================
 export async function deleteTask(token, todoId) {
