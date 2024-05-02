@@ -7,7 +7,7 @@ import TodoModal from '../core/modal/TodoModal';
 
 const TaskItem = ({ taskData }) => {
     // console.log('taskData = ', taskData)
-    const { title, description, date, isCompleted, _id: todoId } = taskData
+    const { title, description, date, isCompleted, _id: todoId, isImportant } = taskData
     const { user: { token } } = useSelector(state => state.profile)
     const [showModal, setShowModal] = useState(false);
 
@@ -29,7 +29,8 @@ const TaskItem = ({ taskData }) => {
 
     return (
         <div className="flex flex-col justify-between p-5 gap-2 h-64 w-[400px] font-semibold rounded-2xl bg-[#303030] border-2 border-[#454444] transition ">
-            <div className='flex flex-col gap-2'>
+            <div className='flex flex-col gap-2 relative'>
+                {isImportant && <p className='absolute right-0 top-0 '>📌</p>}
                 <h4>
                     {title}
                 </h4>
