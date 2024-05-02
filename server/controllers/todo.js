@@ -7,7 +7,7 @@ exports.createTodo = async (req, res) => {
     try {
         const { title, description, date, isCompleted, isImportant } = req.body
         // console.log({
-        //     title, description, date, isCompleted, isImportant, imageUrl
+        //     title, description, date, isCompleted, isImportant,
         // })
         const userId = req.user.id
         if (!title || !description || !date || !userId) {
@@ -18,7 +18,7 @@ exports.createTodo = async (req, res) => {
         }
 
         const newTodo = await Todo.create({
-            title, description, date, isCompleted, isImportant, imageUrl, userId
+            title, description, date, isCompleted, isImportant, userId
         })
 
         // inserting new todo ID in user data (todos array)
