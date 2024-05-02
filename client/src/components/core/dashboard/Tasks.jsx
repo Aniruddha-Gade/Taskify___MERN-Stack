@@ -3,7 +3,7 @@ import TaskItem from '../../common/TaskItem'
 
 // icons
 import { FaPlus } from "react-icons/fa6";
-import CreateTodoModal from '../modal/TodoModal';
+import TodoModal from '../modal/TodoModal';
 
 // Loading Skeleton
 const LoadingSkeleton = () => {
@@ -66,7 +66,7 @@ const Tasks = ({ title, tasks, loading }) => {
           <FaPlus className='text-2xl' />
           Add New Task
         </button>
-        <CreateTodoModal showModal={showModal} setShowModal={setShowModal} type={'create'} />
+        <TodoModal showModal={showModal} setShowModal={setShowModal} type={'create'} />
       </div>
 
 
