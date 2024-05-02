@@ -1,6 +1,9 @@
 import React from 'react'
 import TaskItem from '../../common/TaskItem'
 
+// icons
+import { FaPlus } from "react-icons/fa6";
+
 // Loading Skeleton
 const LoadingSkeleton = () => {
   return (
@@ -53,8 +56,8 @@ const Tasks = ({ title, tasks, loading }) => {
         }
 
 
-        <button className="flex items-center justify-center gap-2 h-64 w-[400px] text-green-500 font-semibold rounded-2xl border-2 border-[#303030] transition " >
-          +
+        <button className="flex items-center justify-center gap-2 h-64 w-[400px] text-green-500 font-semibold rounded-2xl border-4 border-[#303030] border-dotted transition " >
+        <FaPlus className='text-2xl' />
           Add New Task
         </button>
 
