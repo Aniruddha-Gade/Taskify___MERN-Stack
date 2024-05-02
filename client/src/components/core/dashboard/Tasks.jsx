@@ -1,8 +1,9 @@
-import React from 'react'
+import { useState } from 'react'
 import TaskItem from '../../common/TaskItem'
 
 // icons
 import { FaPlus } from "react-icons/fa6";
+import CreateTodoModal from '../modal/TodoModal';
 
 // Loading Skeleton
 const LoadingSkeleton = () => {
@@ -17,6 +18,8 @@ const LoadingSkeleton = () => {
 
 
 const Tasks = ({ title, tasks, loading }) => {
+
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div className='w-screen'>
@@ -56,11 +59,14 @@ const Tasks = ({ title, tasks, loading }) => {
         }
 
 
-        <button className="flex items-center justify-center gap-2 h-64 w-[400px] text-green-500 font-semibold rounded-2xl border-4 border-[#303030] border-dotted transition " >
-        <FaPlus className='text-2xl' />
+        <button
+          onClick={() => setShowModal(!showModal)}
+          className="flex items-center justify-center gap-2 h-64 w-[400px] text-green-500 font-semibold rounded-2xl border-4 border-[#303030] border-dotted transition "
+        >
+          <FaPlus className='text-2xl' />
           Add New Task
         </button>
-
+        <CreateTodoModal showModal={showModal} setShowModal={setShowModal} type={'create'} />
       </div>
 
 
