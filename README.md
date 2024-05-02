@@ -3,10 +3,12 @@
 
 # Project Description 📝
 The Taskify allows users to manage their tasks effectively with features including login and logout functionality, <br/>
-navigation and routing using React Router, displaying todo items fetched from a mock API endpoint, and <br/>
+navigation and routing using React Router, displaying todo items fetched from an API endpoint, and <br/>
 implementing CRUD operations for todo items.<br/>
+<br/>
 Users can create, read, update, and delete todo items, as well as search for todo items by title or description.<br/>
-Authentication is implemented using JWT tokens, and state management is handled using React hooks.
+Authentication is implemented using JWT tokens, and state management is handled using React hooks.<br/>
+Hashed password using Bcrypt library
 
 
 
@@ -93,7 +95,7 @@ Authentication is implemented using JWT tokens, and state management is handled 
 
 4. Set up environment variables: 🔧
 
-   Create a `.env` file in the root directory of Server and add the following:
+   Create a `.env` file in the root directory of Client and add the following:
 
    ```plaintext
 
@@ -101,7 +103,7 @@ Authentication is implemented using JWT tokens, and state management is handled 
 
    ```
    
-   Create a `.env` file in the root directory of Client and add the following:
+   Create a `.env` file in the root directory of Server and add the following:
 
    ```plaintext
 
