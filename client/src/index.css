@@ -26,7 +26,7 @@
 /* ========================================== TAILWIND STYLES */
 @layer utilities {
   .wrapper {
-    @apply max-w-7xl lg:mx-auto p-5  w-full;
+    @apply  lg:mx-auto p-5  w-full;
   }
 
   .flex-center {
