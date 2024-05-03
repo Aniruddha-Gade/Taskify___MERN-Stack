@@ -193,6 +193,13 @@ Sure, here are the headings with proper emojis:
 # Signup Page 📝 
 <img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/signup.png' />
 
+# OTP received mail 📝 
+<img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/otp1.jpg' />
+
+# OTP received mail 📝 
+<img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/otp2.jpg' />
+
+
 # Login Page 🔑 
 <img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/login.png' />
 
