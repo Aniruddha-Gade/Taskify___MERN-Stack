@@ -178,6 +178,9 @@ Sure, here are the headings with proper emojis:
 # Dashboard Page 📊 
 <img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/dashboard1.png' />
 
+# Dashboard Page 📊 ( Responsive screen ) 
+<img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/dashboard%203.png' />
+
 # Loading Skeleton 📊 
 <img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/loading-skeleton.png' />
 
