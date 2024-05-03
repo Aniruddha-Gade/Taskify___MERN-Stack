@@ -35,7 +35,7 @@ const Tasks = ({ title, tasks, loading }) => {
       {/* tasks list */}
       <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 place-items-center w-full gap-4 mt-5'>
         {
-          !loading ? (
+          loading ? (
             <>
               <div className=''>
                 <LoadingSkeleton />
