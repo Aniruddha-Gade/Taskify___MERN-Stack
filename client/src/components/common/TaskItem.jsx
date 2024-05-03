@@ -29,7 +29,7 @@ const TaskItem = ({ taskData }) => {
     }
 
     return (
-        <div className="flex flex-col justify-between p-5 gap-2 h-64 w-[400px] font-semibold rounded-2xl bg-[#303030] border-2 border-[#454444] transition ">
+        <div className="flex flex-col justify-between p-5 gap-2 h-64 w-[310px] sm:w-[400px] font-semibold rounded-2xl bg-[#303030] border-2 border-[#454444] transition ">
             <div className='flex flex-col gap-2 relative'>
                 {isImportant && <p className='absolute right-0 top-0 '>📌</p>}
                 {/* title of todo */}

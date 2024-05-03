@@ -8,7 +8,7 @@ import TodoModal from '../modal/TodoModal';
 // Loading Skeleton
 const LoadingSkeleton = () => {
   return (
-    <div className="min-h-64 w-full min-w-[400px] flex flex-col justify-between gap-4 rounded-xl bg-[#303030 shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] p-3 border-2 border-[#454444] hover:cursor-wait">
+    <div className="min-h-64 w-[310px] sm:w-[400px]  flex flex-col justify-between gap-4 rounded-xl bg-[#303030 shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] p-3 border-2 border-[#454444] hover:cursor-wait">
       <div className="skeleton rounded-xl w-20 h-5"></div>
       <div className="skeleton rounded-xl w-56 h-5"></div>
       <div className="skeleton w-full rounded-xl h-[150px] "></div>
@@ -35,12 +35,12 @@ const Tasks = ({ title, tasks, loading }) => {
       {/* tasks list */}
       <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 place-items-center w-full gap-4 mt-5'>
         {
-          loading ? (
+          !loading ? (
             <>
               <div className=''>
                 <LoadingSkeleton />
               </div>
-              <div className='hidden md:flex'>
+              <div className=''>
                 <LoadingSkeleton />
               </div>
               <div className='hidden md:flex'>
@@ -61,7 +61,7 @@ const Tasks = ({ title, tasks, loading }) => {
 
         <button
           onClick={() => setShowModal(!showModal)}
-          className="flex items-center justify-center gap-2 h-64 w-[400px] text-green-500 font-semibold rounded-2xl border-4 border-[#303030] border-dotted transition "
+          className="flex items-center justify-center gap-2 h-64 w-[310px] sm:w-[400px]  text-green-500 font-semibold rounded-2xl border-4 border-[#303030] border-dotted transition "
         >
           <FaPlus className='text-2xl' />
           Add New Task
