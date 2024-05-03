@@ -17,7 +17,7 @@ const ProtectedRoute = ({ children }) => {
         <div className='wrapper h-screen flex-center w-full'>
 
             <div className='text-2xl sm:text-4xl text-center relative leading-[35px] sm:leading-[60px]'>
-                <p>Discover Today's Tasks 📝</p>
+                <p>Discover Today&apos;s Tasks 📝</p>
 
                 <div className=''>
                     <Link
