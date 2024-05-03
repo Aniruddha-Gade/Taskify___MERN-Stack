@@ -6,7 +6,8 @@ The Taskify allows users to manage their tasks effectively with features includi
 navigation and routing using React Router, displaying todo items fetched from an API endpoint, and <br/>
 implementing CRUD operations for todo items.<br/>
 <br/>
-Users can create, read, update, and delete todo items, as well as search for todo items by title or description.<br/>
+Users can create, read, update, and delete todo items
+<br/>
 Authentication is implemented using JWT tokens, and state management is handled using React hooks.<br/>
 Hashed password using Bcrypt library
 
@@ -16,6 +17,11 @@ Hashed password using Bcrypt library
 <hr/>
 
 <h2>Live link 🌍📡 - [  https://taskify-full-stack.vercel.app/  ]</h2>
+
+<h2>
+Postman Collection 📬 : [  https://elements.getpostman.com/redirect?entityId=29064533-6165ab7d-6558-49f1-bb8f-39bdb8c727d4&entityType=collection  ]
+</h2>
+
 <hr/>
 
 
@@ -62,6 +68,15 @@ Hashed password using Bcrypt library
 - **Reusable Todo Modal Component**: 🔄 Implement a reusable component for creating and updating todo items, enhancing code maintainability and reusability.
 - **Reusable Todo Display Components**: 🔄 Utilize reusable components to display all todos, including incomplete, completed, and important todos, streamlining the UI and promoting code modularity.
 - Loading Skeleton: 💀 loading skeletons to enhance user experience while fetching data.
+
+
+# Additional Points:
+- Utilized local storage for storing user info and tokens
+- Effective use of Git and GitHub with a clean commit history
+- Implemented fetching for all tasks, incomplete, complete, and important tasks
+- Implemented both protected and open route components for secure navigation
+- Delete account , change Password, forgot password functionality
+
 
 ## Getting Started: 💡
 
@@ -151,7 +166,16 @@ Contributions are welcome!
 
 ## License 📝
 
-
+## React Hooks 🎣
+- useState
+- useEffect
+- useSelector
+- useDispatch
+- useRef
+- useForm
+- useLocation
+- useParams
+  
 
 ## Acknowledgements 🙏
 
