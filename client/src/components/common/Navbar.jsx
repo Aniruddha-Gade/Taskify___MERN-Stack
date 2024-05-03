@@ -5,6 +5,7 @@ import { Link, matchPath, useLocation, useNavigate } from 'react-router-dom'
 import logo from '../../../public/images/taskify-logo.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../services/operations/authApi';
+import MobileNavbar from './MobileNavbar';
 
 const Navbar = () => {
 
@@ -48,17 +49,19 @@ const Navbar = () => {
   return (
     <nav
       className={`${showNavBar} w-full h-[70px] fixed top-0 z-[10] translate-y-0 transition-all bg-[#181818] 
-                  px-10 py-1 flex items-center justify-between gap-10 border-b-2 border-richblack-700 `}
+                  px-5 sm:px-10 py-1 flex items-center justify-between gap-10 border-b-2 border-richblack-700 `}
     >
       {/* logo */}
       <Link to='/'>
         <img
           src={logo}
-          className='w-32'
+          className='w-20 sm:w-32'
         />
       </Link>
 
-      <ul className='flex justify-between items-center gap-x-5 text-xl  text-white '>
+      <MobileNavbar />
+
+      <ul className='hidden sm:flex justify-between items-center gap-x-5 text-xl  text-white '>
         {
           NavbarLinks.map((link) => (
             <li key={link.title}>
@@ -74,7 +77,7 @@ const Navbar = () => {
 
 
       {/* Login / SignUp */}
-      <div className='flex gap-x-4 items-center'>
+      <div className='hidden sm:flex gap-x-4 items-center'>
         {
           token === null && (
             <Link to="/login">
