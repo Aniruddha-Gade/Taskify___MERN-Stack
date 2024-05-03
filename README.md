@@ -185,8 +185,6 @@ Contributions are welcome!
 
 ##  Screen Preview 🖥️ 🏆
 
-Sure, here are the headings with proper emojis:
-
 # Home Page 🏠 
 <img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/home1.png' />
 
