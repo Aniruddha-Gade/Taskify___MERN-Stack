@@ -59,7 +59,10 @@ const Navbar = () => {
         />
       </Link>
 
-      <MobileNavbar />
+      {/* show only for mobile devices */}
+      <div className='sm:hidden'>
+        <MobileNavbar />
+      </div>
 
       <ul className='hidden sm:flex justify-between items-center gap-x-5 text-xl  text-white '>
         {
