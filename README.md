@@ -6,7 +6,8 @@ The Taskify allows users to manage their tasks effectively with features includi
 navigation and routing using React Router, displaying todo items fetched from an API endpoint, and <br/>
 implementing CRUD operations for todo items.<br/>
 <br/>
-Users can create, read, update, and delete todo items, as well as search for todo items by title or description.<br/>
+Users can create, read, update, and delete todo items
+<br/>
 Authentication is implemented using JWT tokens, and state management is handled using React hooks.<br/>
 Hashed password using Bcrypt library
 
@@ -16,6 +17,11 @@ Hashed password using Bcrypt library
 <hr/>
 
 <h2>Live link 🌍📡 - [  https://taskify-full-stack.vercel.app/  ]</h2>
+
+<h2>
+Postman Collection 📬 : [  https://elements.getpostman.com/redirect?entityId=29064533-6165ab7d-6558-49f1-bb8f-39bdb8c727d4&entityType=collection  ]
+</h2>
+
 <hr/>
 
 
@@ -46,7 +52,9 @@ Hashed password using Bcrypt library
 | <code title="React.js"><img height="55" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/mongodb%20logo.png"></code>      |MongoDB |
 | <code title="React.js"><img height="30" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/tailwind%20css%20logo.png"></code>      |Tailwind CSS |
 | <code title="React.js"><img height="40" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/css%20logo.png"></code>      |CSS |
-| <code title="Redux.js"><img height="35" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/redux-logo.png"></code>      |Redux |
+| <code title="Redux.js"><img height="35" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/redux-logo.png"></code>      |Redux Toolkit|
+
+
 
 
 
@@ -61,7 +69,16 @@ Hashed password using Bcrypt library
 - **Hash Password with bcrypt**: 🔒 Enhance security by securely hashing user passwords using the bcrypt library.
 - **Reusable Todo Modal Component**: 🔄 Implement a reusable component for creating and updating todo items, enhancing code maintainability and reusability.
 - **Reusable Todo Display Components**: 🔄 Utilize reusable components to display all todos, including incomplete, completed, and important todos, streamlining the UI and promoting code modularity.
-- Loading Skeleton: 💀 loading skeletons to enhance user experience while fetching data.
+- **Loading Skeleton**: 💀 loading skeletons to enhance user experience while fetching data.
+- **State Management with Redux Toolkit**: 🔄 Utilize Redux Toolkit for efficient state management, ensuring scalability and maintainability of the application.
+
+# Additional Points:
+- Utilized **local storage** for storing user info and tokens
+- Effective use of Git and GitHub with a clean **commit history**
+- Implemented **fetching** for all tasks, incomplete, complete, and important tasks
+- Implemented both **protected** and **open route components** for secure navigation
+- Delete account , change Password, forgot password functionality
+- Utilized **Postman** for thorough **API testing**, ensuring robustness and reliability of backend endpoints.
 
 ## Getting Started: 💡
 
@@ -151,7 +168,16 @@ Contributions are welcome!
 
 ## License 📝
 
-
+## React Hooks 🎣
+- useState
+- useEffect
+- useSelector
+- useDispatch
+- useRef
+- useForm
+- useLocation
+- useParams
+  
 
 ## Acknowledgements 🙏
 
@@ -159,15 +185,26 @@ Contributions are welcome!
 - **MongoDB**: 📊 For flexible and scalable data storage.
 
 
-##  Screen Preview 🖥️ 🏆
+## Screen Preview 💻
 
-Sure, here are the headings with proper emojis:
 
 # Home Page 🏠 
 <img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/home1.png' />
 
 # Signup Page 📝 
 <img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/signup.png' />
+
+# OTP received mail 📝 
+<div style="display: flex; gap: 20px;">
+   <img width='30%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/otp1.jpg' />
+   <img width='30%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/otp2.jpg' />
+</div>
+<img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/otp3.png' />
+
+# Verify OTP 🔐
+<img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/verify-otp.png' />
+
+
 
 # Login Page 🔑 
 <img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/login.png' />
