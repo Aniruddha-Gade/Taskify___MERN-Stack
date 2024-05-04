@@ -22,6 +22,10 @@ Hashed password using Bcrypt library
 Postman Collection 📬 : [  https://elements.getpostman.com/redirect?entityId=29064533-6165ab7d-6558-49f1-bb8f-39bdb8c727d4&entityType=collection  ]
 </h2>
 
+<h2>
+Backend deployed on Render 📬 : [  https://taskify-mern-stack.onrender.com/  ]
+</h2>
+
 <hr/>
 
 
