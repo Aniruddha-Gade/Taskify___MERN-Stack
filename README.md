@@ -75,6 +75,9 @@ Backend deployed on Render 📬 : [  https://taskify-mern-stack.onrender.com/  ]
 - **Reusable Todo Display Components**: 🔄 Utilize reusable components to display all todos, including incomplete, completed, and important todos, streamlining the UI and promoting code modularity.
 - **Loading Skeleton**: 💀 loading skeletons to enhance user experience while fetching data.
 - **State Management with Redux Toolkit**: 🔄 Utilize Redux Toolkit for efficient state management, ensuring scalability and maintainability of the application.
+- **Secure Forgot Password Token Generation with Crypto**: 🔒 Utilize the Node.js `crypto` module to generate secure reset password tokens. By leveraging cryptographic algorithms, the tokens generated are highly secure and resistant to tampering or manipulation, enhancing the security of the password reset functionality.
+
+
 
 # Additional Points:
 - Utilized **local storage** for storing user info and tokens
