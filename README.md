@@ -69,16 +69,16 @@ Postman Collection 📬 : [  https://elements.getpostman.com/redirect?entityId=2
 - **Hash Password with bcrypt**: 🔒 Enhance security by securely hashing user passwords using the bcrypt library.
 - **Reusable Todo Modal Component**: 🔄 Implement a reusable component for creating and updating todo items, enhancing code maintainability and reusability.
 - **Reusable Todo Display Components**: 🔄 Utilize reusable components to display all todos, including incomplete, completed, and important todos, streamlining the UI and promoting code modularity.
-- Loading Skeleton: 💀 loading skeletons to enhance user experience while fetching data.
-
+- **Loading Skeleton**: 💀 loading skeletons to enhance user experience while fetching data.
+- **State Management with Redux Toolkit**: 🔄 Utilize Redux Toolkit for efficient state management, ensuring scalability and maintainability of the application.
 
 # Additional Points:
-- Utilized local storage for storing user info and tokens
-- Effective use of Git and GitHub with a clean commit history
-- Implemented fetching for all tasks, incomplete, complete, and important tasks
-- Implemented both protected and open route components for secure navigation
+- Utilized **local storage** for storing user info and tokens
+- Effective use of Git and GitHub with a clean **commit history**
+- Implemented **fetching** for all tasks, incomplete, complete, and important tasks
+- Implemented both **protected** and **open route components** for secure navigation
 - Delete account , change Password, forgot password functionality
-
+- Utilized **Postman** for thorough **API testing**, ensuring robustness and reliability of backend endpoints.
 
 ## Getting Started: 💡
 
@@ -195,10 +195,15 @@ Contributions are welcome!
 <img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/signup.png' />
 
 # OTP received mail 📝 
-<img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/otp1.jpg' />
+<div style="display: flex; gap: 20px;">
+   <img width='30%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/otp1.jpg' />
+   <img width='30%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/otp2.jpg' />
+</div>
+<img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/otp3.png' />
 
-# OTP received mail 📝 
-<img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/otp2.jpg' />
+# Verify OTP 🔐
+<img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/verify-otp.png' />
+
 
 
 # Login Page 🔑 
