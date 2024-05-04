@@ -41,7 +41,7 @@ Postman Collection 📬 : [  https://elements.getpostman.com/redirect?entityId=2
 
 
 
-## Tech Stack 💻🔧 
+
 
 
 | Logo                 | Technology                                  |
@@ -52,7 +52,9 @@ Postman Collection 📬 : [  https://elements.getpostman.com/redirect?entityId=2
 | <code title="React.js"><img height="55" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/mongodb%20logo.png"></code>      |MongoDB |
 | <code title="React.js"><img height="30" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/tailwind%20css%20logo.png"></code>      |Tailwind CSS |
 | <code title="React.js"><img height="40" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/css%20logo.png"></code>      |CSS |
-| <code title="Redux.js"><img height="35" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/redux-logo.png"></code>      |Redux |
+| <code title="Redux.js"><img height="35" src="https://github.com/Aniruddha-Gade/Study-Notion-EdTech__MERN-Stack/blob/main/screenshots/Tech%20stack%20logo/redux-logo.png"></code>      |Redux Toolkit|
+
+## Tech Stack 💻🔧 
 
 
 
@@ -183,7 +185,7 @@ Contributions are welcome!
 - **MongoDB**: 📊 For flexible and scalable data storage.
 
 
-##  Screen Preview 🖥️ 🏆
+
 
 # Home Page 🏠 
 <img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/home1.png' />
