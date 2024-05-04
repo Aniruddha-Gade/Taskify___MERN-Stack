@@ -212,9 +212,15 @@ Contributions are welcome!
 <img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/verify-otp.png' />
 
 
-
 # Login Page 🔑 
 <img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/login.png' />
+
+# Forgot Password 
+<img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/forgot-pass1.png' />
+<img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/forgot-pass2.png' />
+<img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/forgot-pass4.png' />
+<img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/forgot-pass3.png' />
+
 
 # Dashboard Page 📊 ( If not logged in ) 
 <img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/dashboard2.png' />
