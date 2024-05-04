@@ -14,6 +14,8 @@ import Completed from "./components/core/dashboard/Completed";
 import InComplete from "./components/core/dashboard/InComplete";
 import AllTasks from "./components/core/dashboard/AllTasks";
 import TodoDetails from "./components/core/dashboard/TodoDetails";
+import ForgotPassword from "./pages/ForgotPassword";
+import UpdatePassword from "./pages/UpdatePassword";
 
 
 function App() {
@@ -50,6 +52,24 @@ function App() {
           path="verify-email" element={
             <OpenRoute>
               <VerifyEmail />
+            </OpenRoute>
+          }
+        />
+
+        {/* forgot password - send reset link to mail */}
+        <Route
+          path="forgot-password" element={
+            <OpenRoute>
+              <ForgotPassword />
+            </OpenRoute>
+          }
+        />
+
+        {/* update password */}
+        <Route
+          path="forgot-password/:forgotPasswordToken" element={
+            <OpenRoute>
+              <UpdatePassword />
             </OpenRoute>
           }
         />

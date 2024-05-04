@@ -10,6 +10,7 @@ const {
 } = require('../controllers/auth');
 const { getUserDetails, deleteAccount } = require('../controllers/user');
 const { auth } = require('../middleware/auth');
+const { forgotPasswordToken, forgotPassword } = require('../controllers/forgotPassword');
 
 
 
@@ -31,5 +32,12 @@ router.post('/user-details', auth, getUserDetails);
 
 // Route for Delete Account
 router.delete('/delete-account', auth, deleteAccount);
+
+// Route for generating a forgot password token
+router.post('/forgot-password-token', forgotPasswordToken);
+
+// Route for reseting user's password after verification
+router.post("/forgot-password", forgotPassword)
+
 
 module.exports = router

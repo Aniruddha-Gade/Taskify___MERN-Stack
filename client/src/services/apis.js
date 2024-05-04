@@ -13,5 +13,7 @@ export const endpoints = {
   COMPLETED_TASK: BASE_URL + "/todo/completed-todos",
   INCOMPLETE_TASK: BASE_URL + "/todo/incomplete-todos",
   TASK_DETAILS: BASE_URL + "/todo/todo-details",
+  FORGOT_PASSWORD_TOKEN_API: BASE_URL + "/auth/forgot-password-token",
+  FORGOT_PASSWORD_API: BASE_URL + "/auth/forgot-password",
 
 }

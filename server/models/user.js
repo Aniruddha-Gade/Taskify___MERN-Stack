@@ -44,6 +44,9 @@ const UserSchema = new mongoose.Schema(
         token: {
             type: String,
         },
+        forgotPasswordToken: {
+            type: String,
+        },
         resetPasswordTokenExpires: {
             type: Date,
         },
