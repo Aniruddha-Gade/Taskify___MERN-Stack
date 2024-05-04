@@ -43,6 +43,14 @@
         {
             "src":"/dashboard/todo/:todoId",
             "dest":"/"
+        },
+        {
+            "src":"/forgot-password",
+            "dest":"/"
+        },
+        {
+            "src":"/forgot-password/:forgotPasswordToken",
+            "dest":"/"
         }
     ]
 }
