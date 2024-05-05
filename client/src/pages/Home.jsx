@@ -16,7 +16,7 @@ import taskImg7 from '../../../screenshots/todo-details.png'
 import { LuCalendarDays } from "react-icons/lu";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { VscServerProcess, VscTools } from "react-icons/vsc";
-
+import Footer from '../components/common/Footer';
 
 // const Card = ({ icon: Icon, title, color }) => {
 //   return (
@@ -247,7 +247,8 @@ const home = () => {
         </div>
       </section>
 
-     
+      {/* footer */}
+      <Footer />
     </div>
   )
 }
