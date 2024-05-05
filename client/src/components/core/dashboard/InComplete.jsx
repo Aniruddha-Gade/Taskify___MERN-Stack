@@ -7,6 +7,8 @@ const InComplete = () => {
 
   // get token from store
   const { user: { token } } = useSelector(state => state.profile)
+  const { refreshPage } = useSelector(state => state.refreshPage)
+
   // console.log("token = ", token)
   const [tasks, setTasks] = useState([])
   const [loading, setLoading] = useState(false)
@@ -21,7 +23,7 @@ const InComplete = () => {
       setLoading(false)
     }
     getAllTasks()
-  }, [token])
+  }, [token, refreshPage])
 
 
   return (

@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useForm } from "react-hook-form"
 import { createTask, updateTask } from '../../../services/operations/todoApi';
+import { setRefreshPage } from '../../../slices/refreshPage';
 
 // icons
 import { FaPlus } from 'react-icons/fa6';
@@ -10,9 +11,10 @@ import { RxCross2 } from "react-icons/rx";
 const TodoModal = ({ showModal, setShowModal, type, selectedTodo }) => {
 
     const { user: { token } } = useSelector(state => state.profile)
+    const dispatch = useDispatch()
     const { register, handleSubmit, setValue, reset, formState: { errors } } = useForm()
 
-
+    dispatch(setRefreshPage(false))
 
     // If type is 'update' and selectedTodo has data
     useEffect(() => {
@@ -40,6 +42,7 @@ const TodoModal = ({ showModal, setShowModal, type, selectedTodo }) => {
 
         reset()
         setShowModal(false)
+        dispatch(setRefreshPage(true))
     };
 
 

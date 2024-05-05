@@ -10,6 +10,7 @@ const Completed = () => {
   // console.log("token = ", token)
   const [tasks, setTasks] = useState([])
   const [loading, setLoading] = useState(false)
+  const { refreshPage } = useSelector(state => state.refreshPage)
 
   // Get All Tasks
   useEffect(() => {
@@ -21,7 +22,7 @@ const Completed = () => {
       setLoading(false)
     }
     getAllTasks()
-  }, [token])
+  }, [token, refreshPage])
 
 
   return (
