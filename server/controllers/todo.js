@@ -18,7 +18,7 @@ exports.createTodo = async (req, res) => {
         }
 
         const newTodo = await Todo.create({
-            title, description, date, isCompleted, isImportant, userId
+            title, description, date, isCompleted, isImportant, userId, createdAt: Date.now()
         })
 
         // inserting new todo ID in user data (todos array)
@@ -53,7 +53,7 @@ exports.getAllTodos = async (req, res) => {
                 message: 'User ID required..!'
             });
         }
-        const userAllTodos = await Todo.find({ userId }).sort({ createdAt: -1 })
+        const userAllTodos = await Todo.find({ userId }).sort({ createdAt: 'desc' })
 
         res.status(200).json({
             success: true,
