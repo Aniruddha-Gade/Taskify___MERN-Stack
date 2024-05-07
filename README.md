@@ -4,7 +4,7 @@
 # Project Description 📝
 The Taskify allows users to manage their tasks effectively with features including login and logout functionality, <br/>
 navigation and routing using React Router, displaying todo items fetched from an API endpoint, and <br/>
-implementing CRUD operations for todo items.<br/>
+implementing CRUD operations for todo items with Search functionality.<br/>
 <br/> 
 Users can create, read, update, and delete todo items
 <br/>
@@ -76,7 +76,7 @@ Backend deployed on Render 📬 : [  https://taskify-mern-stack.onrender.com/  ]
 - **Loading Skeleton**: 💀 loading skeletons to enhance user experience while fetching data.
 - **State Management with Redux Toolkit**: 🔄 Utilize Redux Toolkit for efficient state management, ensuring scalability and maintainability of the application.
 - **Secure Forgot Password Token Generation with Crypto**: 🔒 Utilize the Node.js `crypto` module to generate secure reset password tokens. By leveraging cryptographic algorithms, the tokens generated are highly secure and resistant to tampering or manipulation, enhancing the security of the password reset functionality.
-
+- **Search Functionality** 🔍: Search todo by enter title. 
 
 
 # Additional Points:
