@@ -5,7 +5,7 @@
 The Taskify allows users to manage their tasks effectively with features including login and logout functionality, <br/>
 navigation and routing using React Router, displaying todo items fetched from an API endpoint, and <br/>
 implementing CRUD operations for todo items.<br/>
-<br/>
+<br/> 
 Users can create, read, update, and delete todo items
 <br/>
 Authentication is implemented using JWT tokens, and state management is handled using React hooks.<br/>
