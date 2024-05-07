@@ -28,7 +28,7 @@ const Important = () => {
 
   return (
     <div className='flex bg-[#212121] min-h-screen min-w-full mt-[70px] rounded-2xl border-2 p-5 border-[#303030]'>
-      <Tasks title="Important Tasks 📌" tasks={tasks} loading={loading} />
+      <Tasks title="Important Tasks 📌" originalTasks={tasks} loading={loading} />
     </div>
   )
 }

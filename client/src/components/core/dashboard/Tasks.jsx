@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import TaskItem from '../../common/TaskItem'
 
 // icons
 import { FaPlus } from "react-icons/fa6";
 import TodoModal from '../modal/TodoModal';
+import { TbSearch } from "react-icons/tb";
+
 
 // Loading Skeleton
 const LoadingSkeleton = () => {
@@ -17,19 +19,55 @@ const LoadingSkeleton = () => {
 }
 
 
-const Tasks = ({ title, tasks, loading }) => {
+const Tasks = ({ title, originalTasks, loading, }) => {
 
   const [showModal, setShowModal] = useState(false);
+  const [tasks, setTasks] = useState(originalTasks)
+
+
+  useEffect(() => {
+    setTasks(originalTasks)
+  }, [originalTasks])
+
+  // handle search query
+  const handleSearch = (e) => {
+    const query = e.target.value
+
+    if (query.trim() === '') {
+      console.log("empty")
+      setTasks(originalTasks);
+    } else {
+      console.log("else query is = ", query)
+      const filteredList = originalTasks.filter((task) =>
+        task.title.toLowerCase().includes(query.toLowerCase())
+      );
+      setTasks(filteredList);
+    }
+  };
+
 
   return (
     <div className='w-screen'>
-      <div className='flex justify-between w-full'>
+      <div className='flex-between flex-col sm:flex-row gap-3 w-full'>
         <h3 className='text-2xl font-bold'>
           {title}
         </h3>
-        <button onClick={() => setShowModal(!showModal)} className='text-xl w-12 h-12 flex-center rounded-full border-2 border-[#303030]'>
-          <FaPlus />
-        </button>
+
+        <div className='flex-center  gap-5 '>
+          {/* seacrh button */}
+          <div className='bg-[#303030] w-full sm:w-[300px] lg:w-[600px] 2xl:w-[900px] h-10 flex-center px-5 gap-3 rounded-3xl'>
+            <TbSearch className='text-xl' />
+            <input
+              type='text'
+              className='bg-transparent w-full h-full outline-none  '
+              onChange={(e) => handleSearch(e)}
+            />
+          </div>
+
+          <button onClick={() => setShowModal(!showModal)} className='text-xl w-12 h-12 flex-center rounded-full border-2 border-[#303030]'>
+            <FaPlus />
+          </button>
+        </div>
       </div>
 
       {/* tasks list */}
