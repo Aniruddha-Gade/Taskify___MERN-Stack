@@ -234,6 +234,10 @@ Contributions are welcome!
 # Dashboard Page 📊 ( Responsive screen ) 
 <img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/dashboard%203.png' />
 
+# Search Todo 📊 
+<img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/search%20todo1.png' />
+<img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/search%20todo2.png' />
+
 # Loading Skeleton 📊 
 <img width='100%' src='https://github.com/Aniruddha-Gade/Taskify___MERN-Stack/blob/main/screenshots/loading-skeleton.png' />
 
